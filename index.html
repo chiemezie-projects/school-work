@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiemezie Nzedinma Ifeanyichukwu | Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Satoshi', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #F5E6D3;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            padding: 60px 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            animation: fadeInDown 0.8s ease;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: -0.12em;
+            font-weight: 200;
+            color: #000;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: #000;
+            margin-bottom: 10px;
+            font-weight: 200;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #000;
+            margin-bottom: 20px;
+            font-weight: 200;
+        }
+
+        .tagline {
+            font-size: 1.1em;
+            color: #000;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 200;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #F5E6D3;
+            padding: 20px;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 200;
+            letter-spacing: -0.12em;
+            font-style: italic;
+            color: #000;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .navbar.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .navbar-name {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        .content-grid {
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            padding: 30px;
+            animation: fadeInUp 0.8s ease;
+            margin-bottom: 30px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card h2 {
+            color: #6F4E37;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .icon {
+            font-size: 1.2em;
+        }
+
+        .card p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background: #4A4A4A;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: transform 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .interests-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .interest-item {
+            background: #f0f0f0;
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: #4A4A4A;
+            font-weight: 500;
+            border: 2px solid #4A4A4A;
+            transition: all 0.3s ease;
+        }
+
+        .interest-item:hover {
+            background: #4A4A4A;
+            color: white;
+        }
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            animation: fadeInUp 1s ease;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: #6F4E37;
+        }
+
+        footer p {
+            color: #6F4E37;
+            font-size: 1.1em;
+        }
+
+        .highlight {
+            color: #6F4E37;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            header {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <p class="navbar-name">Chiemezie Nzedinma Ifeanyichukwu</p>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>Chiemezie Nzedinma Ifeanyichukwu</h1>
+            <p class="subtitle">Software Engineering Student</p>
+            <p class="tagline" style="font-style: italic;">Aspiring</p>
+            <p class="tagline">AI/ML Engineer | Brand Designer | No Code Developer</p>
+        </header>
+
+        <div class="card">
+            <h2><span class="icon">🎯</span> About Me</h2>
+            <p>I'm a passionate Software Engineering student with a deep interest in artificial intelligence and machine learning. I combine technical expertise with creative design thinking to build innovative solutions.</p>
+            <p>My journey in technology is driven by curiosity and a desire to create meaningful impact through code and design.</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="card">
+                <h2><span class="icon">💻</span> Technical Skills</h2>
+                <p>Programming Languages I Work With:</p>
+                <div class="skills-grid">
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">HTML</div>
+                    <div class="skill-tag">CSS</div>
+                    <div class="skill-tag">Java</div>
+                    <div class="skill-tag">JavaScript</div>
+                    <div class="skill-tag">SQL</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">🚀</span> Career Goals</h2>
+                <p><strong>AI/ML Engineer:</strong> Building intelligent systems that solve real-world problems</p>
+                <p><strong>Brand Designer:</strong> Creating visual identities that tell compelling stories</p>
+                <p><strong>No Code Developer:</strong> Empowering rapid prototyping and innovation</p>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">📚</span> Interests & Passions</h2>
+                <p>Topics I Love Exploring:</p>
+                <div class="interests-list">
+                    <div class="interest-item">Theology</div>
+                    <div class="interest-item">Mythology</div>
+                    <div class="interest-item">Design</div>
+                    <div class="interest-item">Tech Innovation</div>
+                    <div class="interest-item">Finance</div>
+                    <div class="interest-item">History</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">⚽</span> Sports I Follow</h2>
+                <p>When I'm not coding or designing, you'll find me watching:</p>
+                <div class="interests-list">
+                    <div class="interest-item">⚽ Football</div>
+                    <div class="interest-item">🏎️ Formula 1</div>
+                    <div class="interest-item">🏀 Basketball</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Building the future, one line of code at a time.</p>
+            <p><span class="highlight">Let's create something amazing together!</span></p>
+        </footer>
+    </div>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const header = document.querySelector('h1');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    navbar.classList.add('visible');
+                } else {
+                    navbar.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0,
+            rootMargin: '0px'
+        });
+        
+        observer.observe(header);
+    </script>
+</body>
+</html>
